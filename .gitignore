@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+*/raw_data/
+*/preprocessed_data/
+*/logs/*
+!*/logs/train_losses.csv
+!*/logs/val_losses.csv
+*/checkpoints/*
+!*/checkpoints/final_model.pth.tar

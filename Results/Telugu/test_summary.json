@@ -1,0 +1,66 @@
+{
+  "speaker": null,
+  "speaker_id": 0,
+  "sentences": [
+    {
+      "id": "T1",
+      "text": "న్యూరోఫార్మకోలాజికల్ పరిశోధనలో నూతన ఔషధాల ప్రభావాన్ని విశ్లేషించారు.",
+      "phones": "{n y uu r oo ph aa r m a k oo l aa j i k a l p a r i sh oo dh a n a l oo n uu t a n a au sx a dh aa l a p r a bh aa v aa n n i v i sh l ee sx i ny c aa r u sp}",
+      "n_phones": 67,
+      "duration_s": 4.261,
+      "mean_f0_hz": 191.0,
+      "f0_range_hz": [
+        80.2,
+        290.4
+      ]
+    },
+    {
+      "id": "T2a",
+      "text": "తాడుపై అతని పట్టు చాలా బలంగా ఉంది.",
+      "phones": "{t aa dx u p ai a t a n i p a tx tx u c aa l aa b a l a ng g aa u n d i sp}",
+      "n_phones": 32,
+      "duration_s": 2.136,
+      "mean_f0_hz": 195.6,
+      "f0_range_hz": [
+        120.4,
+        239.0
+      ]
+    },
+    {
+      "id": "T2b",
+      "text": "ఆమె పట్టుచీరను ధరించి వేడుకకు వచ్చింది.",
+      "phones": "{aa m e p a tx tx u c ii r a n u dh a r i ny c i v ee dx u k a k u v a c c i n d i sp}",
+      "n_phones": 38,
+      "duration_s": 2.438,
+      "mean_f0_hz": 182.5,
+      "f0_range_hz": [
+        107.5,
+        241.6
+      ]
+    },
+    {
+      "id": "T3",
+      "text": "పులి అడవిలో నిశ్శబ్దంగా నడిచింది.",
+      "phones": "{p u l i a dx a v i l oo n i sh sh a b d a ng g aa n a dx i c i n d i sp}",
+      "n_phones": 32,
+      "duration_s": 1.997,
+      "mean_f0_hz": 197.6,
+      "f0_range_hz": [
+        110.2,
+        290.9
+      ]
+    },
+    {
+      "id": "T4",
+      "text": "ఈ సమావేశం 2026 నవంబర్ 12వ తేదీ ఉదయం 10:45 గంటలకు ప్రారంభమవుతుంది, సమయానికి సిద్ధంగా ఉంచండి.",
+      "phones": "{ii s a m aa v ee sh a m r e nx dx u v ee l a i r a v ai aa r u n a v a m b a r p a n n e nx dx a v a t ee d ii u d a y a m p a d i n a l a bh ai ai d u g a nx tx a l a k u p r aa r a m bh a m a v u t u n d i sp s a m a y aa n i k i s i d dh a ng g aa u ny c a nx dx i sp}",
+      "n_phones": 121,
+      "duration_s": 6.954,
+      "mean_f0_hz": 200.1,
+      "f0_range_hz": [
+        110.0,
+        252.7
+      ]
+    }
+  ]
+}

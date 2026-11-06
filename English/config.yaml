@@ -1,0 +1,98 @@
+# FastSpeech 2 - English (Svarah). One file = the upstream preprocess.yaml + model.yaml + train.yaml.
+# Relative paths are resolved against this file's directory.
+language: en
+
+preprocess:
+  dataset: "Svarah"
+  source:
+    source: hf                       # hf | manifest (JSONL/CSV with audio_filepath,text[,duration])
+    name: "ai4bharat/Svarah"         # needs a HuggingFace token (huggingface-cli login / HF_TOKEN)
+    split: test                      # the dataset only ships a "test" split (6,656 clips, 9.6 h)
+    # Svarah has no speaker-id column: the speaker-level metadata tuple is hashed to a pseudo-speaker id
+    speaker_keys: [gender, age-group, primary_language, native_place_state, native_place_district,
+                   highest_qualification, job_category, occupation_domain]
+  selection:
+    train_hours: 5.0
+    val_hours: 1.0
+    oversample: 1.20                 # select 20 % extra; MFA failures are absorbed, then trimmed back
+    min_duration: 1.0
+    max_duration: 15.0
+    dedupe_transcripts: true         # one utterance per sentence -> no text shared by train and val
+    seed: 1234
+  path:
+    raw_path: "raw_data/Svarah"
+    preprocessed_path: "preprocessed_data/Svarah"
+    lexicon_path: "preprocessed_data/Svarah/lexicon.txt"
+  preprocessing:
+    text:
+      text_cleaners: ["english_cleaners"]
+      language: "en"
+    audio:
+      sampling_rate: 22050
+      max_wav_value: 32768.0
+    stft:
+      filter_length: 1024
+      hop_length: 256
+      win_length: 1024
+    mel:
+      n_mel_channels: 80
+      mel_fmin: 0
+      mel_fmax: 8000        # HiFi-GAN (universal) expects 8 kHz
+    pitch:
+      feature: "phoneme_level"
+      normalization: True
+    energy:
+      feature: "phoneme_level"
+      normalization: True
+
+model:
+  transformer:
+    encoder_layer: 4
+    encoder_head: 2
+    encoder_hidden: 256
+    decoder_layer: 6
+    decoder_head: 2
+    decoder_hidden: 256
+    conv_filter_size: 1024
+    conv_kernel_size: [9, 1]
+    encoder_dropout: 0.2
+    decoder_dropout: 0.2
+  variance_predictor:
+    filter_size: 256
+    kernel_size: 3
+    dropout: 0.5
+  variance_embedding:
+    pitch_quantization: "linear"
+    energy_quantization: "linear"
+    n_bins: 256
+  multi_speaker: True
+  max_seq_len: 1500          # frames (17 s at hop 256 / 22.05 kHz); upstream default is 1000
+  vocoder:
+    model: "HiFi-GAN"
+    speaker: "universal"     # bundled generator_universal checkpoint (common/hifigan/)
+
+train:
+  path:
+    ckpt_path: "checkpoints"
+    log_path: "logs"
+    result_path: "logs/result"
+  num_workers: 2
+  optimizer:
+    batch_size: 16
+    betas: [0.9, 0.98]
+    eps: 0.000000001
+    weight_decay: 0.0
+    grad_clip_thresh: 1.0
+    grad_acc_step: 1
+    warm_up_step: 4000
+    anneal_steps: [40000, 50000, 55000]
+    anneal_rate: 0.3
+  step:
+    total_step: 60000
+    log_step: 50
+    synth_step: 2000
+    val_step: 1000
+    save_step: 5000
+
+inference:
+  speaker: auto                      # pseudo-speaker with most training utterances

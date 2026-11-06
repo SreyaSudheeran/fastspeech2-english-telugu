@@ -1,0 +1,27 @@
+{
+  "train_utts": 2566,
+  "val_utts": 518,
+  "shared_ids": 0,
+  "shared_transcripts": 0,
+  "val_speakers_not_in_train": 0,
+  "summary": {
+    "train": {
+      "utterances": 2566,
+      "hours": 4.688,
+      "speakers": 1
+    },
+    "val": {
+      "utterances": 518,
+      "hours": 0.942,
+      "speakers": 1
+    },
+    "skipped_no_textgrid": 1,
+    "skipped_alignment_failed": 0,
+    "skipped_too_long": 0,
+    "pitch_mean_std_hz": [
+      187.4158487926958,
+      42.635477956909696
+    ]
+  },
+  "note": "audio-hash disjointness was asserted during `preprocess.py --stage prepare`"
+}

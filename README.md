@@ -109,9 +109,7 @@ The small files inference needs (`stats.json`, `speakers.json`, `train.txt`) are
 !git clone -q https://github.com/SreyaSudheeran/fastspeech2-english-telugu.git
 %cd fastspeech2-english-telugu
 !pip install -q -r requirements.txt
-import nltk
-for p in ["averaged_perceptron_tagger", "averaged_perceptron_tagger_eng", "cmudict", "punkt", "punkt_tab"]:
-    nltk.download(p, quiet=True)
+!python -c "import nltk; [nltk.download(x) for x in ['averaged_perceptron_tagger','averaged_perceptron_tagger_eng','cmudict','punkt','punkt_tab']]"
 ```
 
 Then restart the session (Runtime, Restart session) and do not re-run Cell 1. Cell 2:

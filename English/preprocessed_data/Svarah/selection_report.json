@@ -1,0 +1,27 @@
+{
+  "seed": 1234,
+  "dropped": {
+    "bad_transcript": 1253,
+    "duration_out_of_range": 353,
+    "duplicate_transcript": 186
+  },
+  "after_filtering": {
+    "utterances": 5050,
+    "hours": 7.800079010416666
+  },
+  "after_dedupe": {
+    "utterances": 4864,
+    "hours": 7.556841041666667
+  },
+  "selected_train": {
+    "utterances": 3797,
+    "hours": 5.880768298611112
+  },
+  "selected_val": {
+    "utterances": 844,
+    "hours": 1.3193136458333334
+  },
+  "n_speakers_train": 115,
+  "n_speakers_val": 114,
+  "dictionary_words": 7248
+}

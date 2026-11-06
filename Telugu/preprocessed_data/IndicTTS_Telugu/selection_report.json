@@ -1,0 +1,32 @@
+{
+  "seed": 1234,
+  "dropped": {
+    "bad_transcript": 138,
+    "duration_out_of_range": 3185,
+    "duplicate_transcript": 13
+  },
+  "after_filtering": {
+    "utterances": 5253,
+    "hours": 11.797442361111113
+  },
+  "chosen_speaker": "1",
+  "speaker_hours_available": {
+    "0": 3.735410711805557,
+    "1": 8.06203164930556
+  },
+  "after_dedupe": {
+    "utterances": 3767,
+    "hours": 8.046991111111112
+  },
+  "selected_train": {
+    "utterances": 2567,
+    "hours": 5.499421776620371
+  },
+  "selected_val": {
+    "utterances": 518,
+    "hours": 1.1010595949074073
+  },
+  "n_speakers_train": 1,
+  "n_speakers_val": 1,
+  "dictionary_words": 14084
+}

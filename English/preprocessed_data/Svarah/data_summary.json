@@ -1,0 +1,19 @@
+{
+  "train": {
+    "utterances": 3457,
+    "hours": 5.002,
+    "speakers": 115
+  },
+  "val": {
+    "utterances": 698,
+    "hours": 1.0,
+    "speakers": 114
+  },
+  "skipped_no_textgrid": 0,
+  "skipped_alignment_failed": 0,
+  "skipped_too_long": 0,
+  "pitch_mean_std_hz": [
+    179.69007674302486,
+    57.305503709312795
+  ]
+}
